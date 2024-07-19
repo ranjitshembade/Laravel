@@ -12,7 +12,7 @@
    
     <div class="container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-6"> 
                 <h1>Add New User</h1>
                 <form action="{{route('addUser')}}" method="POST">
                     @csrf

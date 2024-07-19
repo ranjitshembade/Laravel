@@ -15,8 +15,8 @@ class UserController extends Controller
     $users = DB::table('students')
       // ->get();// we can get here paginate 
       // ->orderBy('name')
-      // ->simplePaginate(4);
-      ->Paginate(4);
+      ->simplePaginate(4);
+    // ->Paginate(4);
 
     // dump ($users); //view on front end make simple and attractive to view
 
@@ -53,6 +53,10 @@ class UserController extends Controller
       return redirect()->route('home')->with('error', 'Failed to add profile. Please try again.');    // Redirect with an error message if update fails
     }
 
+  //   $req->validation(['username'=>'required',
+  //  'usermobileno'=>'required',
+  //  'useraddress'=>'required']);
+
 
 
     /*add static value
@@ -64,12 +68,13 @@ class UserController extends Controller
         'mobile_no' => 'satish@gmail.com',
         'address' => 'home Towen Tuza Kaam Kar, MahaBarabode, Bharat'
       ]); */
-    if ($user) {
-      echo ("<h1> Data Has succesfully Added </h1>");
-    } else {
-      echo ("<h1> Operation Fail </h1>");
-    }
-  }
+    // if ($user) {
+    //   echo ("<h1> Data Has succesfully Added </h1>");
+    // } else {
+    //   echo ("<h1> Operation Fail </h1>");
+    // }
+   
+}
 
   /*
   public function updateUser()

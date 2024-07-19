@@ -40,6 +40,8 @@ Route::get('/demo2/{name}/{id?}', function($name, $id=null)  {
     });
 
     */
+
+    
 /*
     Route::get('/{name?}',function($name = null){
         $data = compact('name');
@@ -52,8 +54,10 @@ return view('home')->with($data);; //its automatically redirect in view home.bla
 //      return view('loops');
 //}); 
 
-Route::get('/',[DemoController::class, 'index']);
+// Route::get('/',[DemoController::class, 'index']);
 
 
 
- 
+Route::get('/', function () {
+    return view('welcome');
+});
