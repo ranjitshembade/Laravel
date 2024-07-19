@@ -43,7 +43,8 @@
                 @include('partials.alerts')
             </table>
             <div class="mt-5">
-                {{$data->links() }}
+                {{$data->links() }} 
+                {{-- {{$data->links('pagination::bootstrap-5') }} --}}
             </div>
         </div>
         </div>

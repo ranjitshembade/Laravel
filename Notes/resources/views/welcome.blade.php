@@ -17,4 +17,4 @@
 <p> It's Demo Project which is used for practice By Ranjit. </p>
 @endsection
 
-<a href="{{route('blog')}}">Blog</a>
+{{-- <a href="{{route('blog')}}">Blog</a> --}}

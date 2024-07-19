@@ -15,8 +15,8 @@ class UserController extends Controller
     $users = DB::table('students')
       // ->get();// we can get here paginate 
       // ->orderBy('name')
-      ->simplePaginate(4);
-      //->Paginate(4);
+      // ->simplePaginate(4);
+      ->Paginate(4);
 
     // dump ($users); //view on front end make simple and attractive to view
 
