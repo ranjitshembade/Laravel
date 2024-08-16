@@ -49,6 +49,15 @@ class UserController extends Controller
         // $user->save(); //save data in table
 
 
+        //Validate Data
+        $request->validate([
+            'username' => 'required',
+            'useremail' => 'required|email',
+            'userage' => 'required|numeric',
+            'usercity' => 'required'
+        ]);
+
+
         //MassAssignment Method: It's help to add mass data faster than 1st method
         //this function using garded method without using that in model we can't use this
         User::create([
@@ -66,18 +75,45 @@ class UserController extends Controller
     public function show(string $id)
     {
         $users = User::find($id);
-
         return view("viewuser", compact('users')); //compact('users') that user is key get reference from $users
     }
 
 
     public function edit(User $user)
     {
-        return view("updateuser");
+        $users = User::find($user->id);
+        return view("updateuser", compact('users'));
     }
 
 
-    public function update(Request $request, User $user) {}
+    public function update(Request $request, string $id)
+    {
+        // $user = User::find($id);
+        // $user->name = $request->username;
+        // $user->email = $request->useremail;
+        // $user->age = $request->userage;
+        // $user->city = $request->usercity;
+        // $user->save(); //save data in table
+
+        $request->validate([
+            'username' => 'required',
+            'useremail' => 'required|email',
+            'userage' => 'required|numeric',
+            'usercity' => 'required'
+
+        ]);
+
+        $user = User::where('id', $id)
+            ->update([
+                'name' => $request->username,
+                'email' => $request->useremail,
+                'age' => $request->userage,
+                'city' => $request->usercity
+            ]);
+
+        return redirect()->route('user.index')
+            ->with('status', 'User Updated Successfully.');
+    }
 
 
     public function destroy(User $user) {}
