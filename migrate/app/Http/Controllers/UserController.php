@@ -19,7 +19,7 @@ class UserController extends Controller
     // ->Paginate(4);
 
     // dump ($users); //view on front end make simple and attractive to view
-
+    // dd($users);
     return view('allusers', ['data' => $users]);
   }
 
@@ -45,7 +45,8 @@ class UserController extends Controller
       ->insert([
         'name' => $req->username,
         'mobile_no' => $req->usermobileno,
-        'address' => $req->useraddress
+        'address' => $req->useraddress,
+        'email' => $req->useremail
       ]);
     if ($user) {
       return redirect()->route('home')->with('success', 'Profile Added successfully!');
@@ -53,9 +54,9 @@ class UserController extends Controller
       return redirect()->route('home')->with('error', 'Failed to add profile. Please try again.');    // Redirect with an error message if update fails
     }
 
-  //   $req->validation(['username'=>'required',
-  //  'usermobileno'=>'required',
-  //  'useraddress'=>'required']);
+    //   $req->validation(['username'=>'required',
+    //  'usermobileno'=>'required',
+    //  'useraddress'=>'required']);
 
 
 
@@ -73,8 +74,8 @@ class UserController extends Controller
     // } else {
     //   echo ("<h1> Operation Fail </h1>");
     // }
-   
-}
+
+  }
 
   /*
   public function updateUser()
@@ -102,7 +103,9 @@ class UserController extends Controller
       ->update([
         'name' => $req->username,
         'mobile_no' => $req->usermobileno,
-        'address' => $req->useraddress
+        'address' => $req->useraddress,
+        'email' => $req->useremail
+
       ]);
     if ($user) {
       return redirect()->route('home')->with('success', 'Profile updated successfully!');

@@ -5,4 +5,6 @@
 <h3>Name : {{ $user->name}}</h3> 
 <h3>Mobile : {{ $user->mobile_no}}</h3>
 <h3>Address : {{ $user->address}}</h3>
+<h3>Address : {{ $user->email}}</h3>
+
 @endforeach

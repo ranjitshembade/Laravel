@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('mobile_no')->unique();
             $table->string('email', 255)->notNull();
             $table->string('percentage', 3)->notNull();
-
         });
     }
 

@@ -28,6 +28,10 @@
                         <label for="address" class="form-label">Address</label>
                         <input type="address" class="form-control" id="address" name="useraddress">
                     </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">EmailId</label>
+                        <input type="email" class="form-control" id="email" name="useremail">
+                    </div>
                     {{-- <div class="mb-3">
                         <label for="city" class="form-label">City</label>
                         <input type="text" class="form-control" id="city" name="usercity">

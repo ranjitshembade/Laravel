@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-   
+
         Schema::table('students', function (Blueprint $table) {
-           
-            $table->dropColumn('email');
+
+            // $table->dropColumn('email');
             $table->dropColumn('percentage');
             $table->string('address');
 
@@ -23,7 +23,6 @@ return new class extends Migration
 
             $table->timestamps();
         });
-        
     }
 
     /**

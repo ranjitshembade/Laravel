@@ -23,6 +23,7 @@
                     <th>Name</th>
                     <th>Mobile No</th>
                     <th>Address</th>
+                    <th>EmailId</th>
                     <th>View</th>
                     <th>Delete</th>
                     <th>Update</th>
@@ -34,6 +35,7 @@
                     <td>{{ $user->name}}</td>
                     <td> {{ $user->mobile_no}}</td>
                     <td>  {{ $user->address}}</td>
+                    <td>  {{ $user->email}}</td>
                     <td> <a href="{{ route('view.user', $user->id)}}" class="btn btn-primary btn-sm"> View </a></td>
                     <td> <a href="{{ route('delete.user', $user->id)}}" class="btn btn-danger btn-sm"> Delete </a></td>
                     <td> <a href="{{ route('update.page', $user->id)}}" class="btn btn-warning btn-sm"> Update </a></td>
